@@ -1,0 +1,154 @@
+
+body {
+	font-family: "Open Sans", Helvetica, sans-serif;
+	font-size: 18px;
+}
+
+div.container {
+    margin: 0 auto;
+    width:750px;
+    height:200px;
+    // background-color:#F7F7F7;
+}
+
+div.header {
+    // width:600px;
+    display: flex;
+    // min-height:44px;
+    background-color:#B31B1B;
+    //text-align:right;
+    // padding: 5px 5px;
+}
+
+div.cornell {
+    // width:580px;
+    background-color:#B31B1B;
+    color: #F7F7F7;
+    padding:5px 10px;
+    margin-left:-10px;
+    margin-right:-10px;
+}
+
+div.ut {
+    // width:580px;
+    background-color:#BF5700;
+    color: #F7F7F7;
+    padding:5px 10px;
+    margin-left:-10px;
+}
+
+div.unt {
+    // width:580px;
+    background-color:#00853E;
+    color: #F7F7F7;
+    padding:5px 10px;
+    margin-left:-10px;
+}
+
+div.body {
+    // width:580px;
+    //background-color:#F7F7F7;
+    margin:10px 10px;
+}
+ul {
+    display: block;
+    list-style-type: none;
+    margin-top: 0px;
+    margin-bottom: 10px;
+    padding-left: 30px;
+}
+
+ul li {
+    padding-bottom: 10px;
+}
+
+
+
+nav {
+    float: left;
+    color: #F7F7F7;
+    /*max-width: 160px;*/
+    padding:5px 10px;
+}
+
+nav ul {
+	//margin-left:auto;
+	//margin-right:auto;
+    margin:0;
+    list-style:none;
+    padding: 0;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:link {
+    color:#3787B0;
+}
+
+a:visited {
+    color:#3787B0;
+}
+  
+a:hover {
+    color:#0068AC;
+}
+
+nav li {
+	font-size:20px;
+    display:inline;
+    //margin:0;
+    //padding:0;
+}
+
+nav li a:link {
+    color:#D8D2C9;
+}
+
+nav li a:visited {
+    color:#D8D2C9;
+}
+
+nav li a:hover {
+    color:#F7F7F7;
+}
+
+h1 {
+    margin: 10px;
+    color:#222222;
+}
+
+p {
+    margin: 10px;
+    color:#222222;
+}
+
+pbr {
+   display: block;
+   margin: 10px 0;
+}
+
+#title {
+	color:#3787B0;
+	cursor:pointer;
+	-webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none;
+    font-weight: normal;
+}
+
+#title:hover {
+	color:#0068AC;
+	cursor:pointer;
+	-webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none;
+    font-weight: normal;
+}
