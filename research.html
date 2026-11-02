@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="Research by Cody Freitag in cryptography, distributed computing, and computational systems." name="description"/>
+<title>Research | Cody Freitag</title>
+<link href="style.css" rel="stylesheet"/>
+<style>
+    /* Research-page-only spacing; the shared site styling remains unchanged. */
+    /* A single, softly tinted panel separates the research themes from the long publication list. */
+    .research-areas {
+      max-width:none;
+      background:#f3e9e8;
+      border:1px solid #ead8d8;
+      border-top:1px solid #ead8d8;
+      border-radius:8px;
+      padding:42px 46px 46px;
+      margin-bottom:64px;
+    }
+    .research-areas h2 {color:#793447;margin-bottom:30px}
+    .research-area {max-width:800px;margin:0 0 28px;padding-bottom:28px;border-bottom:1px solid #e4d3d2}
+    .research-area:last-child {margin-bottom:0;padding-bottom:0;border-bottom:0}
+    .research-area h3 {font-size:1.48rem;margin:0 0 10px;color:#793447}
+    .research-area p {margin:0}
+    .research-links {font-size:14px;color:#665e56;margin:0 0 22px}
+    .pub-list li {padding:18px 0}
+    @media (max-width:760px) {
+      .research-areas {padding:28px 23px 32px;margin-bottom:38px}
+      .research-area {margin-bottom:24px;padding-bottom:24px}
+    }
+  
+    /* Understated research-area labels for publications. */
+    .pub-tags {display:flex;flex-wrap:wrap;gap:6px;margin-top:9px}
+    .pub-tag {display:inline-block;padding:3px 9px;border:1px solid #e6d4d6;border-radius:999px;background:#f6edef;color:#793447;font-size:0.76rem;line-height:1.45;font-weight:500}
+
+    /* Publication filters: hidden until JavaScript enables them. */
+    .pub-filters[hidden] {display:none}
+    .pub-filters {display:flex;flex-wrap:wrap;gap:8px;margin:0 0 30px}
+    .pub-filter {font:inherit;font-size:.88rem;line-height:1.4;cursor:pointer;
+      padding:7px 13px;border-radius:999px;border:1px solid #cbaeb5;
+      background:transparent;color:#793447;transition:background-color .15s ease}
+    .pub-filter:hover {background:#f3e9e8}
+    .pub-filter[aria-pressed="true"] {background:#793447;border-color:#793447;color:#fff}
+    .pub-filter:focus-visible {outline:2px solid #793447;outline-offset:3px}
+    .pub-list li[hidden], .pub-heading[hidden], .pub-list[hidden] {display:none}
+</style>
+</head>
+<body>
+<div class="site">
+<header class="topbar">
+<a class="brand" href="index.html">Cody Freitag<span class="brand-dot">.</span></a>
+<nav aria-label="Main navigation">
+<a href="index.html">Home</a>
+<a aria-current="page" href="research.html">Research</a>
+<a href="teaching.html">Teaching</a>
+<a href="about.html">About</a>
+</nav>
+</header>
+<main id="main">
+<section aria-labelledby="research-heading" class="page-intro">
+<h1 id="research-heading">Research</h1>
+<p class="lead">My research background is primarily in cryptography, with an emphasis on cryptographic proofs and their applications to distributed computing. Much of my work explores how to design new cryptographic protocols while understanding the assumptions and limitations underlying their security.</p>
+<p class="lead">More broadly, I'm interested in applying the tools and perspectives of theoretical cryptography to understand computational systems, particularly those motivated by real-world problems. I'm especially interested in developing well-motivated, precise definitions that capture the properties we care about, and using these definitions to understand what can and cannot be achieved.</p>
+</section>
+<section aria-labelledby="areas-heading" class="section research-areas">
+<h2 id="areas-heading">Research Areas</h2>
+<div class="research-area"><h3>Cryptographic Proofs and Verifiable Computation</h3><p>Cryptographic proofs allow us to verify claims about computations that may be too expensive to perform ourselves or concern private information. Designing these systems involves a tension between efficiency and security, with the guarantees depending on the computational, modeling, and trust assumptions we are willing to make. My research explores these tradeoffs through the construction and analysis of succinct and zero-knowledge proof systems.</p></div>
+<div class="research-area"><h3>Decentralization and Distributed Computation</h3><p>Technologies such as blockchains have introduced new ways for mutually distrustful parties to perform computational tasks together over the internet, without relying on a trusted central authority. Tools from cryptography provide a principled way for these parties to coordinate securely. My research focuses on fundamental tasks in this setting, such as generating shared randomness and conducting distributed auctions. In particular, I've explored how time-based cryptography, which relies on fine-grained computational assumptions about the time required to solve problems, can be used to circumvent classical impossibility results in distributed computing.</p></div>
+<div class="research-area"><h3>Foundations of Cryptography</h3><p>At a foundational level, cryptography is about leveraging computational hardness to enable applications that would otherwise be impossible. This motivates studying which cryptographic capabilities are theoretically achievable and what fundamental barriers might prevent them. My research explores these questions through studying advanced cryptographic primitives, such as obfuscation and witness encryption, as well as connections between cryptographic constructions and computational complexity theory.</p></div>
+<div class="research-area"><h3>Modeling and Analyzing Real-World Systems</h3><p>Real-world computational systems are often large and complex, developed through a series of ad hoc design decisions that prioritize efficiency and usability over rigorous security guarantees. Understanding the security and privacy of these systems requires finding the right abstractions, separating the essential features from incidental complexity so that meaningful guarantees can be established. My work in this direction includes the analysis of hash function designs, differential privacy, and more recently, information leakage in algorithmic trading.</p></div>
+</section>
+<section aria-labelledby="publications-heading" class="section publications">
+<h2 id="publications-heading">Publications</h2>
+<p class="research-links">Also available on <a href="https://dblp.org/pers/hd/f/Freitag:Cody">DBLP</a> and <a href="https://scholar.google.com/citations?user=uHQNigQAAAAJ&amp;hl=en">Google Scholar</a>.</p><div aria-label="Filter publications by research area" class="pub-filters" hidden="" role="group"><button aria-pressed="true" class="pub-filter" data-filter="all" type="button">All</button><button aria-pressed="false" class="pub-filter" data-filter="proofs" type="button">Proofs</button><button aria-pressed="false" class="pub-filter" data-filter="decentralization" type="button">Decentralization</button><button aria-pressed="false" class="pub-filter" data-filter="foundations" type="button">Foundations</button><button aria-pressed="false" class="pub-filter" data-filter="modeling" type="button">Modeling</button></div>
+<h2 class="pub-heading">Conference Papers</h2>
+<ul class="pub-list">
+<li data-areas="proofs foundations">
+<b><a href="https://eprint.iacr.org/2026/881" rel="noopener noreferrer" target="_blank">Unique SNARGs with Adaptive Security: Constructions and Black-Box Separations</a></b><br/>
+    		Cody Freitag, Daniel Wichs<br/>
+<b>Crypto 2026</b>
+<div aria-label="Research areas" class="pub-tags"><span class="pub-tag">Proofs</span><span class="pub-tag">Foundations</span></div></li>
+<li data-areas="decentralization">
+<b><a href="https://eprint.iacr.org/2026/743" rel="noopener noreferrer" target="_blank">Improved Rate for Non-Malleable Codes and Time-Lock Puzzles</a></b><br/>
+    		Cody Freitag, Manu Kondapaneni, Ilan Komargodski, Jad Silbak<br/>
+<b>ITCS 2026</b>
+<div aria-label="Research areas" class="pub-tags"><span class="pub-tag">Decentralization</span></div></li>
+<li data-areas="foundations">
+<b><a href="https://eprint.iacr.org/2025/1783" rel="noopener noreferrer" target="_blank">Seedless Condensers for Efficiently Samplable Sources</a></b><br/>
+    		Cody Freitag, Jad Silbak, Daniel Wichs<br/>
+<b>TCC 2025</b>
+<div aria-label="Research areas" class="pub-tags"><span class="pub-tag">Foundations</span></div></li>
+<li data-areas="proofs foundations">
+<b><a href="https://eprint.iacr.org/2025/1913" rel="noopener noreferrer" target="_blank">Unambiguous SNARGs for P from LWE with Applications to PPAD Hardness</a></b><br/>
+    		Liyan Chen, Cody Freitag, Zhengzhong Jin, Daniel Wichs<br/>
+<b>STOC 2025</b>
+<div aria-label="Research areas" class="pub-tags"><span class="pub-tag">Proofs</span><span class="pub-tag">Foundations</span></div></li>
+<li data-areas="proofs">
+<b><a href="https://link.springer.com/chapter/10.1007/978-3-031-58737-5_5" rel="noopener noreferrer" target="_blank">Public-Coin, Complexity-Preserving, Succinct Arguments of Knowledge for NP from Collision-Resistance</a></b><br/>
+    		Cody Freitag, Omer Paneth, Rafael Pass<br/>
+<b>Eurocrypt 2024</b>
+<div aria-label="Research areas" class="pub-tags"><span class="pub-tag">Proofs</span></div></li>
+<li data-areas="decentralization">
+<b><a href="https://eprint.iacr.org/2023/1336" rel="noopener noreferrer" target="_blank">
+        		Riggs: Decentralized Sealed-Bid Auctions</a></b><br/>
+    		Nirvan Tyagi, Arasu Arun, Cody Freitag, Riad Wahby, David Mazieres, Joseph Bonneau<br/>
+<b>CCS 2023</b>
+<div aria-label="Research areas" class="pub-tags"><span class="pub-tag">Decentralization</span></div></li>
+<li data-areas="foundations">
+<b><a href="https://eprint.iacr.org/2023/812" rel="noopener noreferrer" target="_blank">
+        		How to Use (Plain) Witness Encryption: Registered ABE, Flexible Broadcast, and More</a></b><br/>
+    		Cody Freitag, Brent Waters, David J. Wu<br/>
+<b>Crypto 2023</b>
+<div aria-label="Research areas" class="pub-tags"><span class="pub-tag">Foundations</span></div></li>
+<li data-areas="proofs">
+<b><a href="https://ePrint.iacr.org/2022/766" rel="noopener noreferrer" target="_blank">
+        		The Cost of Statistical Security in Proofs for Repeated Squaring</a></b><br/>
+    		Cody Freitag, Ilan Komargodski<br/>
+<b>ITC 2023</b>
+<div aria-label="Research areas" class="pub-tags"><span class="pub-tag">Proofs</span></div></li>
+<li data-areas="modeling">
+<b>
+<a href="https://eprint.iacr.org/2023/348" rel="noopener noreferrer" target="_blank">
+        		Optimal Security for Keyed Hash Functions: Avoiding Time-Space Tradeoffs</a></b><br/>
+    		Cody Freitag, Ashrujit Ghoshal, Ilan Komargodski<br/>
+<b>Eurocrypt 2023</b>
+<div aria-label="Research areas" class="pub-tags"><span class="pub-tag">Modeling</span></div></li>
+<li data-areas="proofs">
+<b><a href="https://eprint.iacr.org/2022/1025" rel="noopener noreferrer" target="_blank">
+        		Parallelizable Delegation from LWE</a></b><br/>
+    		Cody Freitag, Rafael Pass, Naomi Sirkin<br/>
+<b>TCC 2022</b>
+<div aria-label="Research areas" class="pub-tags"><span class="pub-tag">Proofs</span></div></li>
+<li data-areas="foundations">
+<b><a href="https://ePrint.iacr.org/2022/156" rel="noopener noreferrer" target="_blank">
+        		Cosmic Security: Security Relative to Stateful Natures</a></b><br/>
+    		Benjamin Chan, Cody Freitag, Rafael Pass<br/>
+<b>TCC 2022</b>
+<div aria-label="Research areas" class="pub-tags"><span class="pub-tag">Foundations</span></div></li>
+<li data-areas="modeling">
+<b><a href="https://ePrint.iacr.org/2022/1009" rel="noopener noreferrer" target="_blank">
+        		Time-Space Tradeoffs for Sponge Hashing: Attacks and Limitations
+for Short Collisions</a></b><br/>
+    		Cody Freitag, Ashrujit Ghoshal, Ilan Komargodski<br/>
+<b>Crypto 2022</b>
+<div aria-label="Research areas" class="pub-tags"><span class="pub-tag">Modeling</span></div></li>
+<li data-areas="decentralization">
+<b><a href="https://ePrint.iacr.org/2020/779" rel="noopener noreferrer" target="_blank">
+        		Non-Malleable Time-Lock Puzzles and Applications</a></b><br/>
+    		Cody Freitag, Ilan Komargodski, Rafael Pass, Naomi Sirkin<br/>
+<b>TCC 2021</b>
+<div aria-label="Research areas" class="pub-tags"><span class="pub-tag">Decentralization</span></div></li>
+<li data-areas="foundations">
+<b><a href="https://ePrint.iacr.org/2019/293" rel="noopener noreferrer" target="_blank">
+        		Impossibility of Strong KDM Security with Auxiliary Input</a></b>
+<br/>
+    		Cody Freitag, Ilan Komargodski, Rafael Pass<br/>
+<b>SCN 2020</b>
+<div aria-label="Research areas" class="pub-tags"><span class="pub-tag">Foundations</span></div></li>
+<li data-areas="proofs">
+<b><a href="https://ePrint.iacr.org/2020/994" rel="noopener noreferrer" target="_blank">
+        		SPARKs: Succinct Parallelizable Arguments of Knowledge</a></b>
+<br/>
+    		Cody Freitag, Ilan Komargodski, Rafael Pass, Naomi Sirkin<br/>
+<b>Eurocrypt 2020</b>
+<div aria-label="Research areas" class="pub-tags"><span class="pub-tag">Proofs</span></div></li>
+<li data-areas="decentralization proofs">
+<b><a href="https://ePrint.iacr.org/2019/619" rel="noopener noreferrer" target="_blank">
+        		Continuous Verifiable Delay Functions</a></b>
+<br/>
+    		Cody Freitag, Ilan Komargodski, Rafael Pass, Naomi Sirkin<br/>
+<b>Eurocrypt 2020</b>
+<div aria-label="Research areas" class="pub-tags"><span class="pub-tag">Decentralization</span><span class="pub-tag">Proofs</span></div></li>
+<li data-areas="proofs foundations">
+<b><a href="https://ePrint.iacr.org/2019/631" rel="noopener noreferrer" target="_blank">
+        		Non-Uniformly Sound Certificates with Applications to Concurrent Zero-Knowledge</a></b><br/>
+    		Cody Freitag, Ilan Komargodski, Rafael Pass<br/>
+<b>Crypto 2019</b>
+<div aria-label="Research areas" class="pub-tags"><span class="pub-tag">Proofs</span><span class="pub-tag">Foundations</span></div></li>
+<li data-areas="modeling">
+<b><a href="https://arxiv.org/abs/1808.02174" rel="noopener noreferrer" target="_blank">
+        		Test without Trust: Optimal Locally Private Distribution Testing</a></b><br/>
+    		Jayadev Acharya, Clément L. Canonne, Cody Freitag, Himanshu Tyagi<br/>
+<b>AISTATS 2019</b>
+<div aria-label="Research areas" class="pub-tags"><span class="pub-tag">Modeling</span></div></li>
+<li data-areas="">
+<b><a href="http://www.cs.utexas.edu/~ecprice/papers/hereditary-properties.pdf" rel="noopener noreferrer" target="_blank">
+        		Testing Hereditary Properties of Sequences</a></b><br/>
+    		Cody Freitag, Eric Price, and William Swartworth<br/>
+<b>RANDOM 2017</b>
+</li>
+<li data-areas="">
+<b><a href="https://link.springer.com/chapter/10.1007%2F978-3-319-61204-1_19" rel="noopener noreferrer" target="_blank">
+        		Signature Schemes with Randomized Verification</a></b><br/>
+    		Cody Freitag, Rishab Goyal, Susan Hohenberger, Venkata Koppula, Eysa Lee, Tatsuaki Okamoto, Jordan Tran, and Brent Waters<br/>
+<b>ACNS 2017</b>
+</li>
+<li data-areas="">
+<b><a href="https://www.cs.umd.edu/~jkatz/papers/multi-sender-BE.pdf" rel="noopener noreferrer" target="_blank">
+        		Symmetric-Key Broadcast Encryption: The Multi-Sender Case</a></b><br/>
+    		Cody Freitag, Jonathan Katz, and Nathan Klein<br/>
+<b>CSCML 2017</b>
+</li>
+</ul>
+<h2 class="pub-heading">Journal Papers</h2>
+<ul class="pub-list">
+<li data-areas="modeling">
+<b><a href="https://ePrint.iacr.org/2022/1009" rel="noopener noreferrer" target="_blank">
+        		Time-Space Tradeoffs for Sponge Hashing: Attacks and Limitations
+for Short Collisions</a></b><br/>
+    		Cody Freitag, Ashrujit Ghoshal, Ilan Komargodski<br/>
+<b>Journal of Cryptology 2025</b> (updated version of Crypto 2022 paper)
+    	<div aria-label="Research areas" class="pub-tags"><span class="pub-tag">Modeling</span></div></li>
+<li data-areas="proofs">
+<b><a href="https://dl.acm.org/doi/10.1145/3549523" rel="noopener noreferrer" target="_blank">
+        		SPARKs: Succinct Parallelizable Arguments of Knowledge</a></b>
+<br/>
+    		Cody Freitag, Ilan Komargodski, Rafael Pass, Naomi Sirkin<br/>
+<b>Journal of the Association for Computing Machinery</b> (updated version of Eurocrypt 2020 paper)
+    	<div aria-label="Research areas" class="pub-tags"><span class="pub-tag">Proofs</span></div></li>
+<li data-areas="modeling">
+<b><a href="https://ieeexplore.ieee.org/document/9333586" rel="noopener noreferrer" target="_blank">
+        		Inference under Information Constraints III: Local Privacy Constraints</a></b><br/>
+    		Jayadev Acharya, Clément L. Canonne, Cody Freitag, Ziteng Sun, Himanshu Tyagi<br/>
+<b>IEEE Journal on Special Areas in Information Theory: Privacy and Security of Information Systems 2021</b> (updated version of AISTATS 2019 paper)
+    	<div aria-label="Research areas" class="pub-tags"><span class="pub-tag">Modeling</span></div></li>
+<li data-areas="">
+<b><a href="http://www.sciencedirect.com/science/article/pii/S0277538714001077" rel="noopener noreferrer" target="_blank">
+        		Modeling of Late 3d Transition Metal Metathesis of <b>tert</b>-Butoxide Complexes with Amines</a></b><br/>
+    		Cody Freitag, Francisco Birk, William Ou, and Thomas Cundari<br/>
+<b>Polyhedron 2014</b>
+</li>
+<li data-areas="">
+<b><a href="http://pubs.acs.org/doi/abs/10.1021/ja309755g" rel="noopener noreferrer" target="_blank">
+        		Variable Pathways for Oxygen Atom Insertion into Metal-Carbon Bonds: The Case of Cp<sup>*</sup>W(O)<sub>2</sub>(CH<sub>2</sub>SiMe<sub>3</sub>)</a></b><br/>
+    		Jiajun Mei, Kurtis Carsch, Cody Freitag, T. Brent Gunnoe, and Thomas Cundari<br/>
+<b>Journal of the American Chemical Society 2012</b>
+</li>
+</ul>
+<h2 class="pub-heading">Other Manuscripts</h2>
+<ul class="pub-list">
+<li data-areas="">
+<b><a href="https://www.proquest.com/docview/2825739581" rel="noopener noreferrer" target="_blank">
+        		How to Provably Leverage Time in Cryptography</a></b><br/>
+    		Cody Freitag<br/>
+<b>PhD Dissertation 2023</b> (advised by Rafael Pass)
+    	</li>
+<li data-areas="">
+<b><a href="https://pdfs.semanticscholar.org/4fcf/c08d7e81fa76e0162d23d66664c63acfb019.pdf" rel="noopener noreferrer" target="_blank">
+        		Testing and Searching Pattern Avoiding Sequences</a></b><br/>
+    		Cody Freitag<br/>
+<b>Undergraduate Honors Thesis 2017</b> (advised by Eric Price)
+    	</li>
+</ul>
+<p class="muted">Authors are generally listed alphabetically by last name for publications at theoretical computer science venues.</p>
+</section>
+</main>
+<footer><span>© Cody Freitag</span><span><a href="mailto:codyrfreitag@gmail.com">Email</a></span></footer>
+</div>
+<script>
+  (() => {
+    const filters = document.querySelector('.pub-filters');
+    if (!filters) return;
+    const buttons = [...filters.querySelectorAll('[data-filter]')];
+    const groups = [...document.querySelectorAll('.publications .pub-list')];
+    filters.hidden = false;
+    function applyFilter(value) {
+      buttons.forEach(button => {
+        button.setAttribute('aria-pressed', String(button.dataset.filter === value));
+      });
+      groups.forEach(list => {
+        let visible = 0;
+        list.querySelectorAll('li').forEach(item => {
+          const tags = (item.dataset.areas || '').split(/\s+/).filter(Boolean);
+          const show = value === 'all' || tags.includes(value);
+          item.hidden = !show;
+          if (show) visible++;
+        });
+        list.hidden = visible === 0;
+        const heading = list.previousElementSibling;
+        if (heading && heading.classList.contains('pub-heading')) heading.hidden = visible === 0;
+      });
+    }
+    buttons.forEach(button => button.addEventListener('click', () => applyFilter(button.dataset.filter)));
+  })();
+</script></body>
+</html>
